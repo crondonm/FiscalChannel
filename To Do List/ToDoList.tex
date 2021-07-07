@@ -1,0 +1,75 @@
+
+\documentclass[12pt,a4paper]{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{listings}
+\usepackage{color}
+
+
+\usepackage[left=1.00in, right=1.00in, top=1.00in, bottom=1.00in]{geometry}
+
+\setcounter{MaxMatrixCols}{10}
+\definecolor{mygreen}{RGB}{28,172,0} 
+\definecolor{mylilas}{RGB}{170,55,241}
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\noindent \textbf{#1.} }{\  \rule{0.5em}{0.5em}}
+%\input{tcilatex}
+\begin{document}
+	
+	
+	
+	\section*{Empirics}
+	
+		
+	An alternative formulation as in Blanchard and Perotti (2002):
+	
+	\begin{equation}
+		\log\left(\frac{G_t}{\Bar{G}}\right) = \rho_g\log\left(\frac{G_{t-1}}{\Bar{G}}\right) +\rho_y\log\left(\frac{Y_{t-1}}{\Bar{Y}}\right) + \rho_B\log\left(\frac{B_{t-1}}{\Bar{B}}\right) + \sigma_g\epsilon^G_t
+	\end{equation}
+	
+	where $\Bar{X}$ denotes the steady state value of variable $X_t$.  In the date, we define this state as the long-term mean of the ergodic distribution for each variable. The autoregressive terms of GDP and Debt allow to control for systematic responses to changes in the fundamentals. We are implicitly assuming the government can only react to changes in GDP or debt to GDP reatios with a lag of one quarter.
+		
+	The face value of external debt follows the fiscal rule given by,
+	
+	\begin{equation}
+		\log\left(\frac{B_{t+1}}{\Bar{B}}\right) = \gamma_B\log\left(\frac{B_t}{\Bar{B}}\right) + \gamma_G \log\left(\frac{p^G_t G_t}{\Bar{B}}\right) + \gamma_t^Y\log\left(\frac{p_Y Y_t}{\Bar{Y}}\right)
+	\end{equation}
+	
+
+	Each of the parameters ()$\rho_x$ and $\gamma_x$) can be estimated using country data and/or calibrated to match certain counterfactual moments (i.e, optimal policy). 
+	
+	\section{To Do List...}
+	
+	\begin{itemize}
+		\item Using quarterly data going back as far as possible. 
+		\item Estimate both equations for the U.S, Europe, (Joint, Euro vs Non-Eurozones), Latinamerica and the Caribbean, South America.
+		\item Estimate both equations for each of the GIPS countries (Greece, Ireland, Portugal and Spain) and,  a panel with all of them. 
+		\item Estimate both equations for each of the LAC6 countries (Argentina, Brazil, Chile, Colombia, Mexico and, Peru) and then a panel with all of them. 
+		\item For each model, make a table where you start adding variable by variable, Include country and time fixed-effects. The last column should be the full specification. If you use STATA (outreg2 or similar), make sure output is Latex ready.  
+
+	\end{itemize}
+	
+	
+	
+\end{document}
